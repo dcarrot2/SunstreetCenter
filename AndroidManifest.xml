@@ -76,6 +76,10 @@
             android:name="com.example.sunstreetcenters.ExtraFeatures"
             android:label="@string/title_activity_extra_features" >
         </activity>
+        <activity
+            android:name="com.example.sunstreetcenters.Polls"
+            android:label="@string/title_activity_polls" >
+        </activity>
     </application>
 
 </manifest>
