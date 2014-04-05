@@ -44,6 +44,7 @@
     <string name="plus">+</string>
     <string name="zero">0.00</string>
     <string name="zeroint">0</string>
+<<<<<<< HEAD
     <string name="title_activity_polls">Polls</string>
     <string name="secret_banner">Gateway Drugs Survey</string>
     <string name="secret_instructions1">Are these statements True or False?</string>
@@ -60,5 +61,7 @@
     <string name="secret_Qf">f.  Parents or other family members buy or give it to them.</string>
     <string name="secret_Qg">g.  They get an adult they don\'t know to buy it for them.</string>
     <string name="next_button">Next</string>
+=======
+>>>>>>> 73421b92d46410c673dc30b1e5ebf8463c2f7561
 
 </resources>
