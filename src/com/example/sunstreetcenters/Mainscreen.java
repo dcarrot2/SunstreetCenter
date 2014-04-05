@@ -15,7 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Mainscreen extends Activity {
-
+	//Test commit to check network path
 	//URLS to parse
 	static private final String FACEBOOK_URL = "https://www.facebook.com/SunStreetCenters";
 	static private final String TWITTER_URL  = "https://twitter.com/SunStreetTweet";
@@ -152,5 +152,7 @@ public class Mainscreen extends Activity {
 		Intent chooseTweet = Intent.createChooser(visitTwitter, CHOOSER_TEXT);
 		startActivity(chooseTweet);
 	}
+	
+	
 
 }
