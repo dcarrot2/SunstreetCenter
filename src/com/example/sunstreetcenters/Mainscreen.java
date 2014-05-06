@@ -16,6 +16,10 @@ import android.widget.Button;
 
 public class Mainscreen extends Activity {
 
+
+	//Test commit to check network path
+
+
 	//URLS to parse
 	static private final String FACEBOOK_URL = "https://www.facebook.com/SunStreetCenters";
 	static private final String TWITTER_URL  = "https://twitter.com/SunStreetTweet";
@@ -108,6 +112,14 @@ public class Mainscreen extends Activity {
 	}
 
 	@Override
+
+	public void onBackPressed() {
+		this.finish();
+	}
+
+
+	@Override
+
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.mainscreen, menu);
@@ -123,6 +135,7 @@ public class Mainscreen extends Activity {
 	
 	private void prescriptionActivity()
 	{
+
 		Intent prescription = new Intent(Mainscreen.this, Prescriptiondrugs_brochures.class);
 		
 		startActivity(prescription);

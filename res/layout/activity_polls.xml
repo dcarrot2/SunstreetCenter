@@ -1,0 +1,395 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+    
+    <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/secret_instructions1"
+                    android:textSize="30dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="@string/secret_Q1"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:textOff="False"
+                		android:textOn="True" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText10"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="@string/secret_Q2"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <Switch
+                        android:id="@+id/switch2"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight=".5"
+                        android:textOff="False"
+                		android:textOn="True" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText9"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="@string/secret_Q3"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <Switch
+                        android:id="@+id/switch3"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight=".5" 
+                        android:textOff="False"
+                		android:textOn="True" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText8"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="@string/secret_Q4"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <Switch
+                        android:id="@+id/switch4"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight=".5" 
+                        android:textOff="False"
+                		android:textOn="True" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="300dp"
+                    android:layout_height="110dp"
+                    android:text="@string/secret_instructions2"
+                    android:width="200dp"
+                    android:textSize="30dp" />
+            </LinearLayout>
+			
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText7"
+                        android:layout_width="264dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qa"
+                        android:width="100dp"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+
+                    <CheckBox  
+                        android:id="@+id/questionACheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText6"
+                        android:layout_width="264dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qb"
+                        android:width="100dp"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <CheckBox  
+                        android:id="@+id/questionBCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText5"
+                        android:layout_width="264dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qc"
+                        android:textSize="20dp"
+                        android:width="100dp" 
+                        android:clickable="false"
+                        android:editable="false"/>
+
+                    <CheckBox  
+                        android:id="@+id/questionCCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText4"
+                        android:layout_width="262dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qd"
+                        android:width="100dp"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <CheckBox 
+                        android:id="@+id/questionDCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText3"
+                        android:layout_width="264dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qe"
+                        android:width="100dp"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <CheckBox  
+                        android:id="@+id/questionECheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText2"
+                        android:layout_width="264dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qf"
+                        android:width="100dp"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <CheckBox  
+                        android:id="@+id/questionFCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/EditText1"
+                        android:layout_width="264dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secret_Qg"
+                        android:width="100dp"
+                        android:textSize="20dp"
+                        android:clickable="false"
+                        android:editable="false" />
+
+                    <CheckBox 
+                        android:id="@+id/questionGCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked" 
+                        android:checked="false"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next_button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</ScrollView>
