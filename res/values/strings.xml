@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
-   
     <string name="app_name">Sunstreet\nCenters</string>
-
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="url">www.sunstreetcenters.org</string>
@@ -26,7 +23,7 @@
     <string name="callButton">Call Sunstreet</string>
     <string name="websiteButton">Visit sunstreet.org</string>
     <string name="linkFiveString">Millennium Labs Helps Launch Coalition to Tackle Prescription Drug Misuse, Abuse in San Diego</string>
-    <string name="contactInformation">Sun Street Centers Contact Information</string>
+    <string name="contactInformation">Sun Street Centers\nContact Information</string>
     <string name="title_activity_additional_drugs">AdditionalDrugs</string>
     <string name="title_activity_info_for_parents">InfoForParents</string>
     <string name="firstLine">Unexplained mood changes/mood swings</string>
@@ -64,7 +61,6 @@
     <string name="secret_Qf">f.  Parents or other family members buy or give it to them.</string>
     <string name="secret_Qg">g.  They get an adult they don\'t know to buy it for them.</string>
     <string name="next_button">Next</string>
-
     <string name="title_activity_front_page">FrontPage</string>
     <string name="gender">Gender:</string>
     <string name="age">Age:</string>
@@ -73,7 +69,8 @@
     <string name="inage">Input Age</string>
     <string name="submit">Submit</string>
     <string name="title_activity_splash">Splash</string>
-
-
+    <string name="title_activity_cigarettes_brochure">Cigarettes_brochure</string>
+    <string name="title_activity_marijuana_brochure">Marijuana_brochure</string>
+    <string name="title_activity_alcohol_brochure">Alcohol_brochure</string>
 
 </resources>

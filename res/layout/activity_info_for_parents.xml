@@ -1,13 +1,10 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FFFFED"
     tools:context=".InfoForParents" >
 
     <TabHost
@@ -41,16 +38,16 @@
                         android:id="@+id/tabOneTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="*Unexplained mood changes/mood swings\n
-* Unpredictable behavior\n\n* Changes in eating or sleeping patterns\n
-* Missing money, prescription drugs or cough medicines from the home\n
-* Slipping grades \n\n* Loss of Interest in activities he or she once enjoyed\n
-* Unexplained drowsiness, confusion, nausea, constipation, slowed breathing (all signs of opioid use)\n
-* Nervousness, insomnia, loss of appetite, weight loss, increased energy (all signs of stimulant use)\n 
-* Fatigue, poor concentration, impaired coordination and memory, slowed breathing (all signs of depressant use)\n"
+                        android:text="\n*Unexplained mood changes/mood swings\n\n
+* Unpredictable behavior\n\n* Changes in eating or sleeping patterns\n\n
+* Missing money, prescription drugs or cough medicines from the home\n\n
+* Slipping grades \n\n* Loss of Interest in activities he or she once enjoyed\n\n
+* Unexplained drowsiness, confusion, nausea, constipation, slowed breathing (all signs of opioid use)\n\n
+* Nervousness, insomnia, loss of appetite, weight loss, increased energy (all signs of stimulant use)\n\n
+* Fatigue, poor concentration, impaired coordination and memory, slowed breathing (all signs of depressant use)\n\n"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" 
-                        android:textColor="#FFFFFF" />
+                        android:textSize="17sp" 
+                        android:textColor="#000000" />
 
                 </LinearLayout>
 
@@ -64,14 +61,14 @@
                         android:id="@+id/tab2TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Prescription drugs of all types can be abused, but the most commonly abused prescription drugs fall into three categories:\n
-* Opioids. Opioids are medications normally prescribed to treat pain. Common opioids are Vicodin (hydrocodone), OxyContin (oxycodone), Darvon (propoxyphene), Diluadid (hydromorphone), morphine, fentanyl, codeine, and other related medications.\n
-* CNS depressants. CNS depressants are medications prescribed to treat anxiety and sleep disorders. They are tranquilizers or sedatives that slow normal brain function and include barbiturates (e.g.; Mebaral and Nembutal), benzodiazepines (e.g.; Valium and Xanax), and sleep medications such as Ambien, Sonata and Lunesta.\n
-* Stimulants. Stimulants are medications prescribed to treat ADHD and narcolepsy. These include amphetamines (e.g.; Adderall and Dexedrine) and methylphenidates (e.g.; Concerta and Ritalin).\n
-* Pain relievers such as OxyContin and Vicodin are the most commonly abused prescription drugs by teens. Dextromethorphan (DXM) is also commonly abused and is found in many over-the-counter cough and cold medicines.\n"
+                        android:text="Prescription drugs of all types can be abused, but the most commonly abused prescription drugs fall into three categories:\n\n
+* Opioids. Opioids are medications normally prescribed to treat pain. Common opioids are Vicodin (hydrocodone), OxyContin (oxycodone), Darvon (propoxyphene), Diluadid (hydromorphone), morphine, fentanyl, codeine, and other related medications.\n\n
+* CNS depressants. CNS depressants are medications prescribed to treat anxiety and sleep disorders. They are tranquilizers or sedatives that slow normal brain function and include barbiturates (e.g.; Mebaral and Nembutal), benzodiazepines (e.g.; Valium and Xanax), and sleep medications such as Ambien, Sonata and Lunesta.\n\n
+* Stimulants. Stimulants are medications prescribed to treat ADHD and narcolepsy. These include amphetamines (e.g.; Adderall and Dexedrine) and methylphenidates (e.g.; Concerta and Ritalin).\n\n
+* Pain relievers such as OxyContin and Vicodin are the most commonly abused prescription drugs by teens. Dextromethorphan (DXM) is also commonly abused and is found in many over-the-counter cough and cold medicines.\n\n"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="12sp" 
-                        android:textColor="#FFFFFF"/>
+                        android:textSize="15sp" 
+                        android:textColor="#000000"/>
 
                 </LinearLayout>
             </FrameLayout>

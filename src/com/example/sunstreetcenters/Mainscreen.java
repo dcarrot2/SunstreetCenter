@@ -1,7 +1,6 @@
 package com.example.sunstreetcenters;
 
 import com.example.sunstreetcenters.Mainscreen;
-import com.example.sunstreetcenters.PrescriptionActivity;
 import com.example.sunstreetcenters.R;
 import com.example.sunstreetcenters.SunsetWebsite;
 
@@ -23,6 +22,7 @@ public class Mainscreen extends Activity {
 	//URLS to parse
 	static private final String FACEBOOK_URL = "https://www.facebook.com/SunStreetCenters";
 	static private final String TWITTER_URL  = "https://twitter.com/SunStreetTweet";
+	static private final String INSTAGRAM_URL = "http://instagram.com/instasteps";
 	
 	static private final String CHOOSER_TEXT = "Open link with.."; //IMPLICIT BOX TEXT
 	
@@ -35,6 +35,7 @@ public class Mainscreen extends Activity {
 				Button facebook = (Button) findViewById(R.id.facebookButton);
 				Button twitter = (Button) findViewById(R.id.twitterButton);
 				Button website = (Button) findViewById(R.id.urlButton);
+				Button instagram = (Button) findViewById(R.id.instagramButton);
 				
 				//Drug Buttons
 				Button prescriptionButton = (Button) findViewById(R.id.prescriptionMedicineButon);
@@ -42,6 +43,14 @@ public class Mainscreen extends Activity {
 				Button marijuanaButton = (Button) findViewById(R.id.marijuanaButton);
 				Button alcoholButton = (Button) findViewById(R.id.alcoholButton);
 				
+				//Buttons for other features
+				Button parentsInformation = (Button) findViewById(R.id.infoForParentsButton);
+				//Button News = (Button) findViewById(R.id.topNewsButton);
+				//Button otherDrugs = (Button) findViewById(R.id.additionalDrugsButton);
+				//Button mythFacts = (Button) findViewById(R.id.mythsAndFactsButton);
+				Button ExtraFeatures = (Button) findViewById(R.id.extraInformationButton);
+				Button ContactInfo = (Button) findViewById(R.id.contactInformationButton);
+
 				prescriptionButton.setOnClickListener(new OnClickListener() {
 
 					//Call prescriptionActivity when pressed.
@@ -59,7 +68,7 @@ public class Mainscreen extends Activity {
 					
 					public void onClick(View v){
 						
-						prescriptionActivity();
+						cigarettesActivity();
 					}
 				});
 				
@@ -77,7 +86,7 @@ public class Mainscreen extends Activity {
 					//call prescriptionActivity button when pressed
 					
 					public void onClick(View v){
-						prescriptionActivity();
+						marijuanaActivity();
 					}
 				});
 				
@@ -86,7 +95,7 @@ public class Mainscreen extends Activity {
 					//call prescriptionActivity button when pressed
 					
 					public void onClick(View v){
-						prescriptionActivity();
+						alcoholActivity();
 					}
 				});
 				
@@ -107,8 +116,41 @@ public class Mainscreen extends Activity {
 						twitterPage();
 					}
 				});
-		
-		
+				
+				
+				instagram.setOnClickListener(new OnClickListener(){
+					
+					public void onClick(View v){
+						instagramPage();
+					}
+				});
+				
+				ContactInfo.setOnClickListener(new OnClickListener() {
+
+					// Display Contact Info on Click
+
+					public void onClick(View v) {
+						contactActivity();
+					}
+				});
+				
+				parentsInformation.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						// TODO Auto-generated method stub
+						startParentsInformation();
+
+					}
+				});
+				
+				ExtraFeatures.setOnClickListener(new OnClickListener() {
+
+					public void onClick(View v) {
+						startExtraFeatures();
+					}
+				});
+
 	}
 
 	@Override
@@ -142,6 +184,50 @@ public class Mainscreen extends Activity {
 		
 	}
 	
+	private void cigarettesActivity()
+	{
+
+		Intent cigarette = new Intent(Mainscreen.this, Cigarettes_brochure.class);
+		
+		startActivity(cigarette);
+		
+	}
+	
+	private void marijuanaActivity()
+	{
+
+		Intent marijuana = new Intent(Mainscreen.this, Marijuana_brochure.class);
+		
+		startActivity(marijuana);
+		
+	}
+	
+	private void alcoholActivity()
+	{
+
+		Intent alcohol = new Intent(Mainscreen.this, Alcohol_brochure.class);
+		
+		startActivity(alcohol);
+		
+	}
+	
+	private void contactActivity() {
+		Intent contactIn = new Intent(Mainscreen.this,ContactInfo.class);
+		startActivity(contactIn);
+		// finish();
+	}
+	
+	private void startExtraFeatures() {
+		Intent features = new Intent(Mainscreen.this,ExtraFeatures.class);
+		startActivity(features);
+	}
+	
+	private void startParentsInformation() {
+		Intent parents = new Intent(Mainscreen.this,ParentsActivity.class);
+		startActivity(parents);
+	}
+	
+	
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
@@ -164,6 +250,15 @@ public class Mainscreen extends Activity {
 		
 		Intent chooseTweet = Intent.createChooser(visitTwitter, CHOOSER_TEXT);
 		startActivity(chooseTweet);
+	}
+	
+	private void instagramPage()
+	{
+		Uri instaPage = Uri.parse(INSTAGRAM_URL);
+		Intent visitInsta = new Intent(Intent.ACTION_VIEW, instaPage);
+		
+		Intent chooseInsta = Intent.createChooser(visitInsta, CHOOSER_TEXT);
+		startActivity(chooseInsta);
 	}
 
 }

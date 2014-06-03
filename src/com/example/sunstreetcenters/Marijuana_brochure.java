@@ -1,16 +1,22 @@
 package com.example.sunstreetcenters;
 
 import android.app.Activity;
+import android.app.ActionBar;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Build;
 
-public class Prescriptiondrugs_brochures extends Activity {
+public class Marijuana_brochure extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_prescriptiondrugs_brochures);
+		setContentView(R.layout.activity_marijuana_brochure);
 
 	}
 
@@ -18,7 +24,7 @@ public class Prescriptiondrugs_brochures extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.prescriptiondrugs_brochures, menu);
+		getMenuInflater().inflate(R.menu.marijuana_brochure, menu);
 		return true;
 	}
 

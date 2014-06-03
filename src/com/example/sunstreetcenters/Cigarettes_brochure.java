@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Prescriptiondrugs_brochures extends Activity {
+public class Cigarettes_brochure extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_prescriptiondrugs_brochures);
+		setContentView(R.layout.activity_cigarettes_brochure);
 
 	}
 
@@ -18,7 +18,7 @@ public class Prescriptiondrugs_brochures extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.prescriptiondrugs_brochures, menu);
+		getMenuInflater().inflate(R.menu.cigarettes_brochure, menu);
 		return true;
 	}
 
