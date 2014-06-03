@@ -17,7 +17,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="56" />
+            android:layout_weight="120" />
 
         <HorizontalScrollView
             android:id="@+id/HorizontalScrollView1"
@@ -31,18 +31,40 @@
                 android:layout_weight="121.48" >
 
                 <Button
-                    android:id="@+id/contactInformationButton"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
+                    android:id="@+id/infoForParentsButton"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/sun_street_logo_button"
+                    android:background="@drawable/parents_info"
                     android:padding="10dp" />
 
                 <Button
+                    android:id="@+id/extraInformationButton"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/extra_features"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/HorizontalScrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="56" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Button
                     android:id="@+id/prescriptionMedicineButon"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/new_prescription"
@@ -50,8 +72,8 @@
 
                 <Button
                     android:id="@+id/cigaretteButton"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/new_cigarettes2"
@@ -59,8 +81,8 @@
 
                 <Button
                     android:id="@+id/marijuanaButton"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/new_marijuana2"
@@ -68,33 +90,13 @@
 
                 <Button
                     android:id="@+id/alcoholButton"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
-                    android:layout_gravity="center"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:layout_weight="1"
                     android:background="@drawable/new_beer2"
                     android:padding="10dp" />
 
-                <Button
-                    android:id="@+id/infoForParentsButton"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/parents_info"
-					android:padding="10dp" />
-
-                <Button
-                    android:id="@+id/extraInformationButton"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/extra_features"
-                    android:padding="10dp" />
-
             </LinearLayout>
-
         </HorizontalScrollView>
 
         <LinearLayout
@@ -128,33 +130,10 @@
             android:layout_height="0dp"
             android:layout_weight=".6" />
 
-        <Button
-            android:id="@+id/facebookButton"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight=".2"
-            android:background="@drawable/new_facebook" />
-
-        <Button
-            android:id="@+id/instagramButton"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight=".2"
-            android:background="@drawable/new_instagram" />
-
-        <Button
-            android:id="@+id/twitterButton"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight=".2"
-            android:background="@drawable/new_tweeter" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".5" />
-	</LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

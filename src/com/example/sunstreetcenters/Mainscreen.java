@@ -32,10 +32,11 @@ public class Mainscreen extends Activity {
 		setContentView(R.layout.activity_mainscreen);
 		
 		//Social Media Buttons
+		/*
 				Button facebook = (Button) findViewById(R.id.facebookButton);
 				Button twitter = (Button) findViewById(R.id.twitterButton);
+				Button instagram = (Button) findViewById(R.id.instagramButton);*/
 				Button website = (Button) findViewById(R.id.urlButton);
-				Button instagram = (Button) findViewById(R.id.instagramButton);
 				
 				//Drug Buttons
 				Button prescriptionButton = (Button) findViewById(R.id.prescriptionMedicineButon);
@@ -99,6 +100,7 @@ public class Mainscreen extends Activity {
 					}
 				});
 				
+				/*
 				facebook.setOnClickListener(new OnClickListener(){
 					
 					//open facebook page
@@ -123,7 +125,7 @@ public class Mainscreen extends Activity {
 					public void onClick(View v){
 						instagramPage();
 					}
-				});
+				});*/
 				
 				ContactInfo.setOnClickListener(new OnClickListener() {
 

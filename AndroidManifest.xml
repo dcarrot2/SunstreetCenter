@@ -19,7 +19,6 @@
             android:name="com.example.sunstreetcenters.Splash"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
-            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,13 +29,11 @@
             android:name="com.example.sunstreetcenters.Mainscreen"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
-            
         </activity>
         <activity
             android:name="com.example.sunstreetcenters.PrescriptionActivity"
             android:label="@string/title_activity_prescription_drug"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
-            
         </activity>
         <activity
             android:name="com.example.sunstreetcenters.MythsAndFacts"
@@ -95,6 +92,10 @@
             android:name="com.example.sunstreetcenters.Alcohol_brochure"
             android:label="@string/title_activity_alcohol_brochure"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.example.sunstreetcenters.Tutorial"
+            android:label="@string/title_activity_tutorial" >
         </activity>
     </application>
 

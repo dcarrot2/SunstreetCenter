@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ViewSwitcher
+        android:id="@+id/viewswitcher"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/demo2" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/demo" />
+
+    </ViewSwitcher>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+</LinearLayout>

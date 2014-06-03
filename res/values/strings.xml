@@ -72,5 +72,6 @@
     <string name="title_activity_cigarettes_brochure">Cigarettes_brochure</string>
     <string name="title_activity_marijuana_brochure">Marijuana_brochure</string>
     <string name="title_activity_alcohol_brochure">Alcohol_brochure</string>
+    <string name="title_activity_tutorial">Tutorial</string>
 
 </resources>
