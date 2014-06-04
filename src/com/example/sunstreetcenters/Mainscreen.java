@@ -31,11 +31,7 @@ public class Mainscreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
 		
-		//Social Media Buttons
-		/*
-				Button facebook = (Button) findViewById(R.id.facebookButton);
-				Button twitter = (Button) findViewById(R.id.twitterButton);
-				Button instagram = (Button) findViewById(R.id.instagramButton);*/
+		
 				Button website = (Button) findViewById(R.id.urlButton);
 				
 				//Drug Buttons
@@ -50,7 +46,6 @@ public class Mainscreen extends Activity {
 				//Button otherDrugs = (Button) findViewById(R.id.additionalDrugsButton);
 				//Button mythFacts = (Button) findViewById(R.id.mythsAndFactsButton);
 				Button ExtraFeatures = (Button) findViewById(R.id.extraInformationButton);
-				Button ContactInfo = (Button) findViewById(R.id.contactInformationButton);
 
 				prescriptionButton.setOnClickListener(new OnClickListener() {
 
@@ -100,41 +95,7 @@ public class Mainscreen extends Activity {
 					}
 				});
 				
-				/*
-				facebook.setOnClickListener(new OnClickListener(){
-					
-					//open facebook page
-					
-					public void onClick(View v){
-						facebookPage();
-					}
-				});
 				
-				twitter.setOnClickListener(new OnClickListener(){
-					
-					//open twitter page
-					
-					public void onClick(View v){
-						twitterPage();
-					}
-				});
-				
-				
-				instagram.setOnClickListener(new OnClickListener(){
-					
-					public void onClick(View v){
-						instagramPage();
-					}
-				});*/
-				
-				ContactInfo.setOnClickListener(new OnClickListener() {
-
-					// Display Contact Info on Click
-
-					public void onClick(View v) {
-						contactActivity();
-					}
-				});
 				
 				parentsInformation.setOnClickListener(new OnClickListener() {
 

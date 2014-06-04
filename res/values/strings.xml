@@ -46,20 +46,6 @@
     <string name="zeroint">0</string>
     <string name="title_activity_prescriptiondrugs_brochures">Prescriptiondrugs_brochures</string>
     <string name="title_activity_polls">Polls</string>
-    <string name="secret_banner">Gateway Drugs Survey</string>
-    <string name="secret_instructions1">Are these statements True or False?</string>
-    <string name="secret_Q1">1.  Alcohol is considered a drug.</string>
-    <string name="secret_Q2">2.  Nicotine cause people to become addicted to tobacco.</string>
-    <string name="secret_Q3">3.  Marijuana(weed) is NOT considered a "gateway drug".</string>
-    <string name="secret_Q4">4.  It\'s okay to use drugs like Vicodin to get high because they are prescribed by a doctor and can\'t hurt you.</string>
-    <string name="secret_instructions2">What are the top three ways students obtain alcohol?</string>
-    <string name="secret_Qa">a.  Buying it at a store that sells liqour to students.</string>
-    <string name="secret_Qb">b.  At "house parties" where parents or other adults are present.</string>
-    <string name="secret_Qc">c.  At "house parties" where NO adults are present.</string>
-    <string name="secret_Qd">d.  They take if from the alcohol kept at home.</string>
-    <string name="secret_Qe">e.  Older friends buy or give it to them.</string>
-    <string name="secret_Qf">f.  Parents or other family members buy or give it to them.</string>
-    <string name="secret_Qg">g.  They get an adult they don\'t know to buy it for them.</string>
     <string name="next_button">Next</string>
     <string name="title_activity_front_page">FrontPage</string>
     <string name="gender">Gender:</string>
@@ -68,10 +54,18 @@
     <string name="female">Female</string>
     <string name="inage">Input Age</string>
     <string name="submit">Submit</string>
-    <string name="title_activity_splash">Splash</string>
     <string name="title_activity_cigarettes_brochure">Cigarettes_brochure</string>
     <string name="title_activity_marijuana_brochure">Marijuana_brochure</string>
     <string name="title_activity_alcohol_brochure">Alcohol_brochure</string>
     <string name="title_activity_tutorial">Tutorial</string>
+    	<string-array name = "agearray">
+       <item>9-13</item>
+       <item>13-18</item>
+       <item>19+</item>
+      
+   	</string-array>
+   	<string name="title_activity_splash">Splash</string>
+    <string name="school">"Submit School "</string>
+    <string name="city">Area Code:</string>
 
 </resources>

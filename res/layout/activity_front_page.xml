@@ -3,75 +3,107 @@
     android:id="@+id/profileSwitcher"
     android:layout_width="wrap_content"
     android:layout_height="fill_parent"
+    android:background="#53666C"
     
     >
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="28dp"
+        android:text="@string/submit"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_centerVertical="true"
-        android:text="@string/age"
+        android:layout_alignBaseline="@+id/btn"
+        android:layout_alignBottom="@+id/btn"
+        android:layout_alignLeft="@+id/textView3"
         android:paddingLeft="20dp"
+        android:text="@string/age"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_marginBottom="21dp"
+        android:paddingLeft="20dp"
+        android:text="@string/city"
         android:textSize="20sp" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="22dp"
-        android:layout_marginTop="42dp"
-        android:paddingRight="20dp"
-        android:orientation="vertical" >
-        
-    <RadioButton
-        android:id="@+id/radioButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/male"
-        android:textSize="20sp" />
+        android:orientation="vertical"
+        android:paddingRight="20dp" >
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/female"
-        android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            android:textSize="20sp" />
 
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+            android:textSize="20sp" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView3"
+        android:paddingRight="20dp"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/radioGroup1"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/btn2"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="17dp"
         android:gravity="left|center_vertical"
         android:text="@string/inage"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="@string/submit"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radioGroup1"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/radioGroup1"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="24dp"
         android:paddingLeft="20dp"
         android:text="@string/gender"
         android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radioGroup1"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sslogo3" />
 
 </RelativeLayout>
