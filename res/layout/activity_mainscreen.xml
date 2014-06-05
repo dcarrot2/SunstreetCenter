@@ -93,6 +93,7 @@
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:layout_weight="1"
+                    android:layout_gravity="center"
                     android:background="@drawable/new_beer2"
                     android:padding="10dp" />
 

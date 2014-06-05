@@ -3,12 +3,10 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <ImageButton
-        android:id="@+id/imageButton1"
+    <Button
+        android:id="@+id/Button1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="0dp"
-        android:scaleType="fitXY"
         android:src="@drawable/demo" />
 
 </LinearLayout>

@@ -60,12 +60,16 @@
     <string name="title_activity_tutorial">Tutorial</string>
     	<string-array name = "agearray">
        <item>9-13</item>
-       <item>13-18</item>
+       <item>14-18</item>
        <item>19+</item>
       
    	</string-array>
    	<string name="title_activity_splash">Splash</string>
     <string name="school">"Submit School "</string>
     <string name="city">Area Code:</string>
+    <string name="action_about">About</string>
+    <string name="action_group">Group</string>
+    <string name="action_call">Call</string>
+    <string name="action_mail">Mail</string>
 
 </resources>

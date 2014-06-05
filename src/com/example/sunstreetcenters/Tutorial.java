@@ -4,13 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ViewSwitcher;
-import android.content.Intent;
+
 
 public class Tutorial extends Activity {
 
@@ -21,7 +16,8 @@ public class Tutorial extends Activity {
 	 protected void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
 	  setContentView(R.layout.activity_tutorial);
-	  final ImageButton btn1 = (ImageButton) findViewById(R.id.imageButton1);
+	  final Button btn1 = (Button) findViewById(R.id.Button1);
+	  btn1.setBackgroundResource(R.drawable.demo);
 	  btn1.setOnClickListener(new View.OnClickListener() {
 		
 		@Override
@@ -37,6 +33,7 @@ public class Tutorial extends Activity {
 			{
 				Intent intent = new Intent(Tutorial.this, Mainscreen.class);
             	Tutorial.this.startActivity(intent);
+            	finish();
 			}
 		}
 	});

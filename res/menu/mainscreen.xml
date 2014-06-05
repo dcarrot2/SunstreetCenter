@@ -1,9 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+ 	    
+ 	    
+     <item android:id="@+id/action_mail"
+          android:icon="@drawable/ic_action_email"
+          android:title="@string/action_mail"
+          android:showAsAction="ifRoom" />
+    
+   	 <item android:id="@+id/action_group"
+	        android:icon="@drawable/ic_action_group"
+	        android:title="@string/action_group"
+	        android:showAsAction="ifRoom"
+	        android:actionProviderClass="android.support.v7.widget.ShareActionProvider"/>
+ 	    
+ 	    <item android:id="@+id/action_info"
+          android:icon="@drawable/ic_action_about"
+          android:title="@string/action_about"
+          android:showAsAction="ifRoom" />
+ 	      
 
 </menu>

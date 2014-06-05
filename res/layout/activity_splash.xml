@@ -9,7 +9,7 @@
               android:layout_alignParentTop="true"
               android:layout_centerHorizontal="true"
               android:layout_marginTop="132dp"
-              android:src="@drawable/sslogo3" />
+              android:src="@drawable/sswhite" />
 
           <ProgressBar
               android:id="@+id/progressBar1"

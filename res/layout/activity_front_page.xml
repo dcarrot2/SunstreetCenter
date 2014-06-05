@@ -104,6 +104,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/radioGroup1"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/sslogo3" />
+        android:src="@drawable/sswhite" />
 
 </RelativeLayout>
