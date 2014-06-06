@@ -181,7 +181,7 @@ SharedPreferences.Editor editor;
 				                editor.commit();
 								Intent intent = new Intent(FrontPage.this, Tutorial.class);
 								startActivityForResult(intent,0);
-								//finish();
+								finish();
 							}
 						});	
 
