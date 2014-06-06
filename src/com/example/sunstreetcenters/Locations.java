@@ -1,149 +1,125 @@
 package com.example.sunstreetcenters;
 
-
-import com.example.sunstreetcenters.Mainscreen;
-import com.example.sunstreetcenters.R;
-import com.example.sunstreetcenters.SunsetWebsite;
-
-import android.net.Uri;
-import android.os.Bundle;
-import android.app.ActionBar;
-import android.app.AlertDialog;
-import android.app.ActionBar.OnNavigationListener;
-import android.app.AlertDialog.Builder;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.util.Log;
+import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.SpinnerAdapter;
+import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 
-public class Mainscreen extends Activity {
+public class Locations extends Activity {
 
-
-	//Test commit to check network path
-
-
-	//URLS to parse
-	static private final String FACEBOOK_URL = "https://www.facebook.com/SunStreetCenters";
-	static private final String TWITTER_URL  = "https://twitter.com/SunStreetTweet";
-	static private final String INSTAGRAM_URL = "http://instagram.com/instasteps";
-	
-	static private final String CHOOSER_TEXT = "Open link with.."; //IMPLICIT BOX TEXT
-	
+	ExpandableListView exv;
 	String number;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_mainscreen);
+		setContentView(R.layout.activity_locations);
 		
+		exv = (ExpandableListView)findViewById(R.id.expandableListView1);
+		exv.setAdapter(new MyAdapter(this));
+		exv.setOnChildClickListener(new OnChildClickListener() {
+
+			@Override
+			public boolean onChildClick(ExpandableListView parent, View v,
+					final int groupPosition, final int childPosition, long id) {
+				
+				AlertDialog.Builder builder = new AlertDialog.Builder(Locations.this);
+				builder.setMessage("Would you like to get Directions to this address? ");
+				builder.setTitle("Confirmation:");
+				builder.setIcon(R.drawable.googlemaps_icon);
+				
+				builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						String address = MyAdapter.childList[groupPosition][childPosition];
+						String temp = "";
+						String addressForMap = "";
+						int count = 0,
+							onlyOnce = 0;
+						for(int c = 0; c < address.length(); c++)
+						{		
+							
+							if(address.charAt(c) == ',')
+								count++;
+							
+							if(count == 2)
+							{
+								for(int i = 0; i < c; i++)
+								{
+									if(address.charAt(i) == ',' )
+									{
+										temp += '+';
+										i++;
+									}
+									else
+										temp += address.charAt(i);
+								}
+								break;
+							}
+						}
+						
+						for(int g = 0; g < temp.length(); g++)
+						{
+							if(onlyOnce == 0 && temp.charAt(g) == ' ')
+							{
+								addressForMap += '+';
+								onlyOnce++;
+							}
+							else
+								addressForMap += temp.charAt(g);
+						}
+						
+						Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+								Uri.parse("google.navigation:q=" + addressForMap));
+						intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+				        try
+				        {
+				            startActivity(intent);
+				        }
+				        catch(ActivityNotFoundException ex)
+				        {
+				            try
+				            {
+				                Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(addressForMap));
+				                startActivity(unrestrictedIntent);
+				            }
+				            catch(ActivityNotFoundException innerEx)
+				            {
+				                Toast.makeText(getBaseContext(), "Please install a maps application", Toast.LENGTH_LONG).show();
+				            }
+				        }
+					}
+				});	
+
+				builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
+				
+				AlertDialog alert11 = builder.create();
+	            alert11.show();
+				
+				return false;
+			}
+		});
 		
-				Button website = (Button) findViewById(R.id.urlButton);
-				
-				//Drug Buttons
-				Button prescriptionButton = (Button) findViewById(R.id.prescriptionMedicineButon);
-				Button cigaretteButton = (Button) findViewById(R.id.cigaretteButton);
-				Button marijuanaButton = (Button) findViewById(R.id.marijuanaButton);
-				Button alcoholButton = (Button) findViewById(R.id.alcoholButton);
-				
-				//Buttons for other features
-				Button parentsInformation = (Button) findViewById(R.id.infoForParentsButton);
-				//Button News = (Button) findViewById(R.id.topNewsButton);
-				//Button otherDrugs = (Button) findViewById(R.id.additionalDrugsButton);
-				//Button mythFacts = (Button) findViewById(R.id.mythsAndFactsButton);
-				Button ExtraFeatures = (Button) findViewById(R.id.extraInformationButton);
-
-				prescriptionButton.setOnClickListener(new OnClickListener() {
-
-					//Call prescriptionActivity when pressed.
-					@Override
-					public void onClick(View v) {
-						
-						prescriptionActivity();
-					
-					}
-				});
-				
-				cigaretteButton.setOnClickListener(new OnClickListener(){
-					
-					//Call prescriptionActivity when pressed.
-					
-					public void onClick(View v){
-						
-						cigarettesActivity();
-					}
-				});
-				
-				website.setOnClickListener(new OnClickListener(){
-					
-					//Call website implicit activity when pressed.
-					
-					public void onClick(View v){
-						createWebsiteLink();
-					}
-				});
-				
-				marijuanaButton.setOnClickListener(new OnClickListener(){
-					
-					//call prescriptionActivity button when pressed
-					
-					public void onClick(View v){
-						marijuanaActivity();
-					}
-				});
-				
-				alcoholButton.setOnClickListener(new OnClickListener(){
-					
-					//call prescriptionActivity button when pressed
-					
-					public void onClick(View v){
-						alcoholActivity();
-					}
-				});
-				
-				
-				
-				parentsInformation.setOnClickListener(new OnClickListener() {
-
-					@Override
-					public void onClick(View arg0) {
-						// TODO Auto-generated method stub
-						startParentsInformation();
-
-					}
-				});
-				
-				ExtraFeatures.setOnClickListener(new OnClickListener() {
-
-					public void onClick(View v) {
-						startExtraFeatures();
-					}
-				});
-				
-
 	}
-
-	@Override
-
-	public void onBackPressed() {
-		this.finish();
-	}
-
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    // Inflate the menu items for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.mainscreen, menu);
+	    inflater.inflate(R.menu.locations, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -276,8 +252,8 @@ public class Mainscreen extends Activity {
 	    	
 	    	
 	    case R.id.action_info:
-	    	Intent location = new Intent(Mainscreen.this, Locations.class);
-			startActivity(location);
+//	    	Intent location = new Intent(Locations.this, Locations.class);
+//			startActivity(location);
 	    	return true;
 	    
 	       
@@ -290,7 +266,7 @@ public class Mainscreen extends Activity {
 	
 	private void callAlertDialog(final String x)
 	{
-		AlertDialog.Builder builder = new Builder(Mainscreen.this);
+		AlertDialog.Builder builder = new Builder(Locations.this);
 		builder.setMessage("Are you sure you want to launch your phone app?");
 		builder.setTitle("Confirmation:");
 
@@ -312,74 +288,5 @@ public class Mainscreen extends Activity {
 
 		builder.create().show();
 	}
-
 	
-	private void createWebsiteLink()
-	{
-		//creates instance of website class
-		SunsetWebsite websiteLink = new SunsetWebsite();
-		startActivity(websiteLink.linkToSite());
-	}
-	
-	private void prescriptionActivity()
-	{
-
-		Intent prescription = new Intent(Mainscreen.this, Prescriptiondrugs_brochures.class);
-		
-		startActivity(prescription);
-		
-	}
-	
-	private void cigarettesActivity()
-	{
-
-		Intent cigarette = new Intent(Mainscreen.this, Cigarettes_brochure.class);
-		
-		startActivity(cigarette);
-		
-	}
-	
-	private void marijuanaActivity()
-	{
-
-		Intent marijuana = new Intent(Mainscreen.this, Marijuana_brochure.class);
-		
-		startActivity(marijuana);
-		
-	}
-	
-	private void alcoholActivity()
-	{
-
-		Intent alcohol = new Intent(Mainscreen.this, Alcohol_brochure.class);
-		
-		startActivity(alcohol);
-		
-	}
-	
-	private void contactActivity() {
-		Intent contactIn = new Intent(Mainscreen.this,ContactInfo.class);
-		startActivity(contactIn);
-		// finish();
-	}
-	
-	private void startExtraFeatures() {
-		Intent features = new Intent(Mainscreen.this,ExtraFeatures.class);
-		startActivity(features);
-	}
-	
-	private void startParentsInformation() {
-		Intent parents = new Intent(Mainscreen.this,ParentsActivity.class);
-		startActivity(parents);
-	}
-	
-	
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-	}
-	
-	
-
 }

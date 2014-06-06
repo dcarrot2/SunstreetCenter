@@ -64,6 +64,8 @@
        <item>19+</item>
       
    	</string-array>
+   
+
    	<string name="title_activity_splash">Splash</string>
     <string name="school">"Submit School "</string>
     <string name="city">Area Code:</string>
