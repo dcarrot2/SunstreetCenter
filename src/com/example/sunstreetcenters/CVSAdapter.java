@@ -1,17 +1,13 @@
 package com.example.sunstreetcenters;
 
 import android.widget.ArrayAdapter;
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
@@ -38,9 +34,7 @@ public class CVSAdapter extends ArrayAdapter<State> {
 			//Load the data.
 			loadArrayFromFile(ext);	
 		}
-		
-		
-		
+
 		/*
 		 * getView() is the method responsible for building a View out of a some data that represents
 		 * one row within the ListView. For this example our row will be a single TextView that

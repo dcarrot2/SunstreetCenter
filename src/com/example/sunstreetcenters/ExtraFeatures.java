@@ -43,7 +43,6 @@ public class ExtraFeatures extends Activity {
 
 	private boolean male;
 
-	private Switch gender;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

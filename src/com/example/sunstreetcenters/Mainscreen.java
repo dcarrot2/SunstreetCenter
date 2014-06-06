@@ -43,12 +43,15 @@ public class Mainscreen extends Activity {
 				Button marijuanaButton = (Button) findViewById(R.id.marijuanaButton);
 				Button alcoholButton = (Button) findViewById(R.id.alcoholButton);
 				
+				
 				//Buttons for other features
 				Button parentsInformation = (Button) findViewById(R.id.infoForParentsButton);
+				Button ExtraFeatures = (Button) findViewById(R.id.extraInformationButton);
+				Button puzzleGame = (Button) findViewById(R.id.gameButton);
 				//Button News = (Button) findViewById(R.id.topNewsButton);
 				//Button otherDrugs = (Button) findViewById(R.id.additionalDrugsButton);
 				//Button mythFacts = (Button) findViewById(R.id.mythsAndFactsButton);
-				Button ExtraFeatures = (Button) findViewById(R.id.extraInformationButton);
+				
 
 				prescriptionButton.setOnClickListener(new OnClickListener() {
 
@@ -60,6 +63,8 @@ public class Mainscreen extends Activity {
 					
 					}
 				});
+				
+			
 				
 				cigaretteButton.setOnClickListener(new OnClickListener(){
 					
@@ -98,7 +103,12 @@ public class Mainscreen extends Activity {
 					}
 				});
 				
-				
+				ExtraFeatures.setOnClickListener(new OnClickListener() {
+
+					public void onClick(View v) {
+						startExtraFeatures();
+					}
+				});
 				
 				parentsInformation.setOnClickListener(new OnClickListener() {
 
@@ -110,12 +120,16 @@ public class Mainscreen extends Activity {
 					}
 				});
 				
-				ExtraFeatures.setOnClickListener(new OnClickListener() {
-
+				puzzleGame.setOnClickListener(new OnClickListener() {
+					
+					@Override
 					public void onClick(View v) {
-						startExtraFeatures();
+						// TODO Auto-generated method stub
+						startPuzzleGame();
+						
 					}
 				});
+				
 
 	}
 
@@ -221,6 +235,10 @@ public class Mainscreen extends Activity {
 		startActivity(parents);
 	}
 	
+	private void startPuzzleGame(){
+		Intent game = new Intent(Mainscreen.this,PictureTakerActivity.class);
+		startActivity(game);
+	}
 	
 	@Override
 	protected void onPause() {
@@ -254,9 +272,5 @@ public class Mainscreen extends Activity {
 		Intent chooseInsta = Intent.createChooser(visitInsta, CHOOSER_TEXT);
 		startActivity(chooseInsta);
 	}
-	
-	
-	
-	
 
 }

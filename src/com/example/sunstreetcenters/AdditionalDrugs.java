@@ -14,7 +14,6 @@ import android.widget.AdapterView.OnItemClickListener;
 public class AdditionalDrugs extends Activity {
 	CVSAdapter mAdapter;
 	private static final String EXT = "additionaldrugs.csv";
-	private static final String lol = "s";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

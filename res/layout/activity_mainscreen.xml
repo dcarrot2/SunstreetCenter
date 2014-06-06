@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="121.48" >
-
+                
                 <Button
                     android:id="@+id/infoForParentsButton"
                     android:layout_width="105dp"
@@ -46,6 +46,15 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/extra_features"
+                    android:padding="10dp" />
+                
+                  <Button
+                    android:id="@+id/gameButton"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/control"
                     android:padding="10dp" />
 
             </LinearLayout>

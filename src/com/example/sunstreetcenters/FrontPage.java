@@ -3,7 +3,6 @@ package com.example.sunstreetcenters;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -12,28 +11,16 @@ import org.apache.http.message.BasicHeader;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
-
 import android.os.Bundle;
-
-import com.example.sunstreetcenters.Mainscreen;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.util.Log;
-import android.view.Menu;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.DialogInterface.OnClickListener;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,7 +64,6 @@ SharedPreferences.Editor editor;
 	protected void onCreate(Bundle savedInstanceState) {
 		//tests
 		prefs = FrontPage.this.getSharedPreferences("nbRepet", MODE_PRIVATE);      
-		int value = prefs.getInt("nbRepet", 0);
 		prefs = getSharedPreferences("nbRepet",Context.MODE_PRIVATE);
 	    editor = prefs.edit();
 	    editor.putInt("nbRepet", 0);
@@ -216,7 +202,6 @@ SharedPreferences.Editor editor;
 			
 			
 		}
-	
 	public void sendJson(final String zip, final String age, final String gender) {
 		Thread t = new Thread() {
 
@@ -227,7 +212,7 @@ SharedPreferences.Editor editor;
 	            JSONObject json = new JSONObject();
 
 	            try {
-	            	HttpPost post = new HttpPost("http://10.26.21.130:8000/demographics/receivedatafromandroid/");
+	            	HttpPost post = new HttpPost("http://10.26.8.53:8000/demographics/receivedatafromandroid/");
 	            	json.put("Zip", zip);
 	            	json.put("Age", age);
 	            	json.put("Gender", gender);

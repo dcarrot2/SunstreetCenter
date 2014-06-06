@@ -3,7 +3,6 @@
 
     <string name="app_name">Sunstreet\nCenters</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="url">www.sunstreetcenters.org</string>
     <string name="info">Info For Parents</string>
     <string name="myth_facts">Myths &amp; Facts</string>
@@ -28,7 +27,8 @@
     <string name="title_activity_info_for_parents">InfoForParents</string>
     <string name="firstLine">Unexplained mood changes/mood swings</string>
     <string name="secondLine">Unpredictable behavior</string>
-    <string name="childAbusePreDrug">Unexplained mood changes/mood swings \\n Unpredictable behavior \\n Changes in eating or sleeping patterns \\n Missing money, prescriptions drugs or cough medicines from the home</string>
+    <string name="childAbusePreDrug">Unexplained mood changes/mood swings \\n Unpredictable behavior \\n Changes in eating or sleeping
+     patterns \\n Missing money, prescriptions drugs or cough medicines from the home</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_extra_features">ExtraFeatures</string>
     <string name="sex">Sex</string>
@@ -71,5 +71,25 @@
     <string name="action_group">Group</string>
     <string name="action_call">Call</string>
     <string name="action_mail">Mail</string>
+    
+    <!-- Main menu item for starting new game -->
+    <string name="new_game">New Game</string>
+    <!-- Main menu item for launching about screen -->
+    <string name="about">About</string>
+    <!-- First text in about screen -->
+    <string name="created_by">This app was created by &lt;a href="http://www.destil.cz">David Vávra&lt;/a>.</string>
+    <!-- Second text in about screen -->
+    <string name="opensource_used">The following open-source projects were used:</string>
+    <!-- First opensource project in about screen -->
+    <string name="project1">- &lt;a href="https://github.com/thillerson/Android-Slider-Puzzle">Android-Slider-Puzzle&lt;/a> by Tony Hillerson (MIT License)</string>
+    <!-- Second opensource project in about screen -->
+    <string name="project2">- &lt;a href="http://actionbarsherlock.com/">ActionBarSherlock&lt;/a> by Jake Wharton (Apache License)</string>
+    <!-- Third text in about screen -->
+    <string name="check_out">Check out my most successful app:</string>
+    <!-- Link to the app Settle Up in about screen -->
+    <string name="settle_up">&lt;a href="https://play.google.com/store/apps/details?id=cz.destil.settleup">Settle Up&lt;/a</string>
+    <string name="title_activity_picture_taker">PictureTakerActivity</string>
+    <string name="cameraPicture">Take Picture</string>
+    <string name="gallery">Choose from Gallery</string>
 
 </resources>
