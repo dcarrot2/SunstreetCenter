@@ -3,9 +3,164 @@
     tools:context="com.example.sunstreetcenters.Alcohol_brochure" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+          android:id = "@+id/action_call"
+          android:icon="@drawable/ic_action_call"
+          android:title="@string/action_call"
+          android:showAsAction="always" >
+   		<menu>
+            
+            	<item
+		            android:id="@+id/administration"
+		            android:title="Administration"
+		            android:showAsAction="always" >
+		            
+            	    <menu>
+            	        
+            	     
+		                
+		                <item
+		                    android:id="@+id/salinasAdmin"
+		                    android:title="Salinas, CA - 831.753.5135"/>
+		            
+            	    </menu>
+            	    
+                </item>
+		        
+		       
+		 
+		        <item
+		            android:id="@+id/residential"
+		            android:title="Men's Residential">
+		            
+            	    <menu>
+            	        
+            	     
+		                
+		                <item
+		                    android:id="@+id/salinasResidential"
+		                    android:title="Salinas, CA - 831.753.5145"/>
+		            
+            	    </menu>
+            	    
+                </item>
+                
+		        <item
+		            android:id="@+id/counseling"
+		            android:title="Counseling Services">
+		            
+            	    <menu>
+            	        
+            	     
+		                
+		                <item
+		                    android:id="@+id/salinasCounseling"
+		                    android:title="Salinas, CA - 831.753.6001"/>
+		            
+            	    </menu>
+            	    
+                </item>
+		            
+		       <item
+		            android:id="@+id/prevention"
+		            android:title="Prevention Centers">
+		            
+            	    <menu>
+            	        
+            	     
+		                
+		                <item
+		                    android:id="@+id/salinasPrevention"
+		                    android:title="Salinas, CA - 831.753.5150"/>
+		                
+		                <item
+		                    android:id="@+id/seasidePrevention"
+		                    android:title="Seaside, CA - 831.899.6577"/>
+		                <item
+		                    android:id="@+id/soledadPrevention"
+		                    android:title="Soledad, CA - 831.385.0100"/>
+		            
+            	    </menu>
+            	    
+                </item>
+		      <item
+		            android:id="@+id/pueblo"
+		            android:title="Pueblo del Mar Family Recovery">
+		            
+            	    <menu>
+            	        
+            	     
+		                
+		                <item
+		                    android:id="@+id/marinaPueblo"
+		                    android:title="Marina, CA - 831.582.9461"/>
+		            
+            	    </menu>
+            	    
+                </item>
+		      <item
+		            android:id="@+id/dui"
+		            android:title="DUI Program">
+		            
+            	    <menu>
+            	        
+            	     
+		                
+		                <item
+		                    android:id="@+id/salinasDUI"
+		                    android:title="Salinas, CA - 831.753.5140"/>
+		                <item
+		                    android:id="@+id/seasideDUI"
+		                    android:title="Seaside, CA - 831.393.9316"/>
+		                <item
+		                    android:id="@+id/soledadDUI"
+		                    android:title="Soldedad, CA - 831.385.0187"/>
+		                
+            	    </menu>
+            	    
+                </item>
+    
+       	</menu>
+   </item>
+     
+    
+ 	    
+     <item android:id="@+id/action_mail"
+          android:icon="@drawable/ic_action_email"
+          android:title="@string/action_mail"
+          android:showAsAction="always" />
+     
+     
+      <item
+	    android:icon="@drawable/ic_action_group"
+	    android:title="Social Media"
+	    android:showAsAction="always">
+	    <menu>
+	        	<item
+		            android:id="@+id/facebook"
+		            android:icon="@drawable/facebook"
+		            android:title="Facebook" />
+		        <item
+		            android:id="@+id/twitter"
+		            android:icon="@drawable/twitter"
+		            android:title="Twitter" />
+		        <item
+		            android:id="@+id/instagram"
+		            android:icon="@drawable/instagram"
+		            android:title="Instagram"/>
+		        
+		       	<item
+		       	    android:icon="@drawable/youtube"
+		       	    android:id="@+id/youtube"
+					android:title="Youtube"/>	        
+	    </menu>
+	    
+	</item>
+    
+     
+ 	    
+ 	    <item android:id="@+id/action_info"
+          android:icon="@drawable/ic_action_about"
+          android:title="@string/action_about"
+          android:showAsAction="always" />
 
 </menu>
