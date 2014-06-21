@@ -1,9 +1,6 @@
 package com.csitandroiddevelopers.sunstreetcenters;
 
-
 import com.csitandroiddevelopers.sunstreetcenters.Mainscreen;
-import com.csitandroiddevelopers.sunstreetcenters.SunsetWebsite;
-import com.csitandroiddevelopers.sunstreetcenters.R;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.AlertDialog;
@@ -16,116 +13,83 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 
 public class Mainscreen extends Activity {
 
 
 	//Test commit to check network path
 	String number;
+	ListView list;
+	String[] listItems = {
+		    "Drug Brochures", 
+		    "BAC Calculator",
+		    "Info for Parents",
+	        "Sliding Puzzle Game",
+	        "Locations",
+	        "Top News"
+		  } ;
+	Integer[] imageId = {
+		      R.drawable.brochure2d,
+		      R.drawable.calculator2d,
+		      R.drawable.info_icon2d,
+		      R.drawable.control2d,
+		      R.drawable.location2d,
+		      R.drawable.news2d
+		  };
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
-		
-		
-				Button website = (Button) findViewById(R.id.urlButton);
-				
-				//Drug Buttons
-				Button prescriptionButton = (Button) findViewById(R.id.prescriptionMedicineButon);
-				Button cigaretteButton = (Button) findViewById(R.id.cigaretteButton);
-				Button marijuanaButton = (Button) findViewById(R.id.marijuanaButton);
-				Button alcoholButton = (Button) findViewById(R.id.alcoholButton);
-				
-				
-				//Buttons for other features
-				Button parentsInformation = (Button) findViewById(R.id.infoForParentsButton);
-				Button ExtraFeatures = (Button) findViewById(R.id.extraInformationButton);
-				Button puzzleGame = (Button) findViewById(R.id.gameButton);
-				//Button News = (Button) findViewById(R.id.topNewsButton);
-				
-
-				prescriptionButton.setOnClickListener(new OnClickListener() {
-
-					//Call prescriptionActivity when pressed.
+				CustomList adapter = new
+				CustomList(Mainscreen.this, listItems, imageId);
+				list=(ListView)findViewById(R.id.list);
+		    
+		        // Assign adapter to ListView
+		        list.setAdapter(adapter); 
+		        // ListView Item Click Listener
+	            list.setOnItemClickListener(new OnItemClickListener() {
+	 
 					@Override
-					public void onClick(View v) {
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
 						
-						prescriptionActivity();
-					
+							if(position == 0){
+								Intent features = new Intent(Mainscreen.this,AllBrochures.class);
+								startActivity(features);
+								
+							}
+							else if(position == 1){
+								Intent features = new Intent(Mainscreen.this,ExtraFeatures.class);
+								startActivity(features);
+							}
+							else if(position == 2){
+								Intent parents = new Intent(Mainscreen.this,InfoForParents.class);
+								startActivity(parents);
+							}
+							else if(position == 3){
+								Intent game = new Intent(Mainscreen.this,PictureTakerActivity.class);
+								startActivity(game);
+							}
+							else if(position == 4){
+								Intent locations = new Intent(Mainscreen.this, Locations.class);
+								startActivity(locations);
+							}
+							else if(position == 5){
+								Intent news = new Intent(Mainscreen.this, TopNewsActivity.class);
+								startActivity(news);
+							}
+							
+							
 					}
-				});
-				
-			
-				
-				cigaretteButton.setOnClickListener(new OnClickListener(){
-					
-					//Call prescriptionActivity when pressed.
-					
-					public void onClick(View v){
-						
-						cigarettesActivity();
-					}
-				});
-				
-				website.setOnClickListener(new OnClickListener(){
-					
-					//Call website implicit activity when pressed.
-					
-					public void onClick(View v){
-						createWebsiteLink();
-					}
-				});
-				
-				marijuanaButton.setOnClickListener(new OnClickListener(){
-					
-					//call prescriptionActivity button when pressed
-					
-					public void onClick(View v){
-						marijuanaActivity();
-					}
-				});
-				
-				alcoholButton.setOnClickListener(new OnClickListener(){
-					
-					//call prescriptionActivity button when pressed
-					
-					public void onClick(View v){
-						alcoholActivity();
-					}
-				});
-				
-				ExtraFeatures.setOnClickListener(new OnClickListener() {
+	    
+	             }); 
+	         }
 
-					public void onClick(View v) {
-						startExtraFeatures();
-					}
-				});
-				
-				parentsInformation.setOnClickListener(new OnClickListener() {
-
-					@Override
-					public void onClick(View arg0) {
-						// TODO Auto-generated method stub
-						startParentsInformation();
-
-					}
-				});
-				
-				puzzleGame.setOnClickListener(new OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						startPuzzleGame();
-						
-					}
-				});
-				
-
-	}
+	
 
 	@Override
 
@@ -238,7 +202,7 @@ public class Mainscreen extends Activity {
 		    }
 		    this.startActivity(intentTwitter);
 		    return true;
-		    
+		  
 	    case R.id.instagram:
 	    	Uri uri = Uri.parse("http://instagram.com/_u/instasteps");
 	        Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
@@ -268,13 +232,10 @@ public class Mainscreen extends Activity {
 	    	        return true;
 	    	    }
 	    	
-	    	
-	    case R.id.action_info:
-	    	Intent location = new Intent(Mainscreen.this, Locations.class);
-			startActivity(location);
-	    	return true;
-	    
-	       
+	    case R.id.website:
+			SunsetWebsite websiteLink = new SunsetWebsite();
+			startActivity(websiteLink.linkToSite());
+	    	       
         default:
             return super.onOptionsItemSelected(item);
 	    }
@@ -308,65 +269,6 @@ public class Mainscreen extends Activity {
 	}
 
 	
-	private void createWebsiteLink()
-	{
-		//creates instance of website class
-		SunsetWebsite websiteLink = new SunsetWebsite();
-		startActivity(websiteLink.linkToSite());
-	}
-	
-	private void prescriptionActivity()
-	{
-
-		Intent prescription = new Intent(Mainscreen.this, Prescriptiondrugs_brochures.class);
-		
-		startActivity(prescription);
-		
-	}
-	
-	private void cigarettesActivity()
-	{
-
-		Intent cigarette = new Intent(Mainscreen.this, Cigarettes_brochure.class);
-		
-		startActivity(cigarette);
-		
-	}
-	
-	private void marijuanaActivity()
-	{
-
-		Intent marijuana = new Intent(Mainscreen.this, Marijuana_brochure.class);
-		
-		startActivity(marijuana);
-		
-	}
-	
-	private void alcoholActivity()
-	{
-
-		Intent alcohol = new Intent(Mainscreen.this, Alcohol_brochure.class);
-		
-		startActivity(alcohol);
-		
-	}
-	
-
-	
-	private void startExtraFeatures() {
-		Intent features = new Intent(Mainscreen.this,ExtraFeatures.class);
-		startActivity(features);
-	}
-	
-	private void startParentsInformation() {
-		Intent parents = new Intent(Mainscreen.this,InfoForParents.class);
-		startActivity(parents);
-	}
-	
-	private void startPuzzleGame(){
-		Intent game = new Intent(Mainscreen.this,PictureTakerActivity.class);
-		startActivity(game);
-	}
 	
 	@Override
 	protected void onPause() {

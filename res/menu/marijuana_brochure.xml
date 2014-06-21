@@ -151,16 +151,16 @@
 		       	<item
 		       	    android:icon="@drawable/youtube"
 		       	    android:id="@+id/youtube"
-					android:title="Youtube"/>	        
+					android:title="Youtube"/>	   
+				<item 
+					android:id="@+id/website"
+					android:title="Website"
+					android:icon="@drawable/sun_street_centers"/>	     
 	    </menu>
 	    
 	</item>
     
      
- 	    
- 	    <item android:id="@+id/action_info"
-          android:icon="@drawable/ic_action_about"
-          android:title="@string/action_about"
-          android:showAsAction="always" />
+ 	 
 
 </menu>

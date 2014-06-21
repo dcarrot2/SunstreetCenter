@@ -359,14 +359,11 @@ public class ExtraFeatures extends Activity {
 	    	        startActivity(intentYoutube);
 	    	        return true;
 	    	    }
-	    	
-	    	
-	    case R.id.action_info:
-	    	Intent location = new Intent(ExtraFeatures.this, Locations.class);
-			startActivity(location);
-	    	return true;
 	    
-	       
+	    case R.id.website:
+			SunsetWebsite websiteLink = new SunsetWebsite();
+			startActivity(websiteLink.linkToSite());   
+	    	
         default:
             return super.onOptionsItemSelected(item);
 	    }

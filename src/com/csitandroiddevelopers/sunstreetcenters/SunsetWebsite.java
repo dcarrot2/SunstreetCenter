@@ -7,7 +7,7 @@ public class SunsetWebsite {
 	//parent class for websites
 		static private final String URL = "http://sunstreetcenters.org"; //URL STRING
 		
-		static private final String CHOOSER_TEXT = "Load " + URL + " with:"; //IMPLICIT BOX TEXT
+		static private final String CHOOSER_TEXT = "Choose a browser: "; //IMPLICIT BOX TEXT
 		
 		protected Intent linkToSite ()
 		{

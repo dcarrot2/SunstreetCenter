@@ -183,7 +183,7 @@ SharedPreferences.Editor editor;
 				                editor = prefs.edit();
 				                editor.putInt("nbRepet", 1);
 				                editor.commit();
-								Intent intent = new Intent(FrontPage.this, Tutorial.class);
+								Intent intent = new Intent(FrontPage.this, Mainscreen.class);
 								startActivityForResult(intent,0);
 								finish();
 							}
@@ -216,7 +216,7 @@ SharedPreferences.Editor editor;
 	            JSONObject json = new JSONObject();
 
 	            try {
-	            	HttpPost post = new HttpPost("http://10.26.8.53:8000/demographics/receivedatafromandroid/");
+	            	HttpPost post = new HttpPost("http://192.168.1.248:8000/demographics/receivedatafromandroid/");
 	            	json.put("Zip", zip);
 	            	json.put("Age", age);
 	            	json.put("Gender", gender);

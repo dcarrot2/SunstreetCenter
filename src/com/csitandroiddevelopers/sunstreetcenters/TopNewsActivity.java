@@ -215,14 +215,11 @@ public class TopNewsActivity extends Activity {
 	    	        startActivity(intentYoutube);
 	    	        return true;
 	    	    }
+	   
+	    case R.id.website:
+			SunsetWebsite websiteLink = new SunsetWebsite();
+			startActivity(websiteLink.linkToSite());	
 	    	
-	    	
-	    case R.id.action_info:
-	    	Intent location = new Intent(TopNewsActivity.this, Locations.class);
-			startActivity(location);
-	    	return true;
-	    
-	       
         default:
             return super.onOptionsItemSelected(item);
 	    }

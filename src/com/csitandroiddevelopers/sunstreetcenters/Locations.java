@@ -252,13 +252,10 @@ public class Locations extends Activity {
 	    	        return true;
 	    	    }
 	    	
+	    case R.id.website:
+			SunsetWebsite websiteLink = new SunsetWebsite();
+			startActivity(websiteLink.linkToSite());	
 	    	
-	    case R.id.action_info:
-//	    	Intent location = new Intent(Locations.this, Locations.class);
-//			startActivity(location);
-	    	return true;
-	    
-	       
         default:
             return super.onOptionsItemSelected(item);
 	    }

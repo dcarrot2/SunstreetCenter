@@ -1,148 +1,28 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/contactInformation"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new_background1"
-    android:orientation="horizontal"
-    android:padding="5dp" >
+    android:background="@drawable/color"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".8"
-        android:orientation="vertical" >
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sswhite" 
+        android:paddingBottom="20sp"/>
+    
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="120" />
-
-        <HorizontalScrollView
-            android:id="@+id/HorizontalScrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="73.79" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="121.48" >
-                
-                <Button
-                    android:id="@+id/infoForParentsButton"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/parents_info"
-                    android:padding="10dp" />
-
-                <Button
-                    android:id="@+id/extraInformationButton"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/extra_features"
-                    android:padding="10dp" />
-                
-                  <Button
-                    android:id="@+id/gameButton"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/control"
-                    android:padding="10dp" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <HorizontalScrollView
-            android:id="@+id/HorizontalScrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="56" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <Button
-                    android:id="@+id/prescriptionMedicineButon"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/new_prescription"
-                    android:padding="10dp" />
-
-                <Button
-                    android:id="@+id/cigaretteButton"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/new_cigarettes2"
-                    android:padding="10dp" />
-
-                <Button
-                    android:id="@+id/marijuanaButton"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/new_marijuana2"
-                    android:padding="10dp" />
-
-                <Button
-                    android:id="@+id/alcoholButton"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:background="@drawable/new_beer2"
-                    android:padding="10dp" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5.90"
-            android:gravity="bottom|center|center_horizontal|center_vertical" >
-
-            <Button
-                android:id="@+id/urlButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.0"
-                android:background="@drawable/url" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".27" />
-
-    <LinearLayout
-        android:layout_width="44dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.04"
-        android:orientation="vertical" >
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".6" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".5" />
-    </LinearLayout>
 
 </LinearLayout>

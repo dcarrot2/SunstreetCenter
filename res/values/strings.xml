@@ -50,21 +50,21 @@
     <string name="title_activity_marijuana_brochure">Marijuana_brochure</string>
     <string name="title_activity_alcohol_brochure">Alcohol_brochure</string>
     <string name="title_activity_tutorial">Tutorial</string>
-    	<string-array name = "agearray">
-       <item>9-13</item>
-       <item>14-18</item>
-       <item>19+</item>
-      
-   	</string-array>
 
-   	<string name="title_activity_splash">Splash</string>
+    <string-array name="agearray">
+        <item>9-13</item>
+        <item>14-18</item>
+        <item>19+</item>
+    </string-array>
+
+    <string name="title_activity_splash">Splash</string>
     <string name="school">"Submit School "</string>
     <string name="city">Area Code:</string>
     <string name="action_about">About</string>
     <string name="action_group">Group</string>
     <string name="action_call">Call</string>
     <string name="action_mail">Mail</string>
- 
+
     <!-- Main menu item for starting new game -->
     <string name="new_game">New Game</string>
     <!-- Main menu item for launching about screen -->
@@ -72,5 +72,7 @@
     <string name="title_activity_picture_taker">PictureTakerActivity</string>
     <string name="cameraPicture">Take Picture</string>
     <string name="gallery">Choose from Gallery</string>
+    <string name="title_activity_all_brochures">AllBrochures</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
