@@ -34,19 +34,16 @@ public class Splash extends Activity {
             	if(value<1)
             	{
             		Intent mainIntent = new Intent(Splash.this,FrontPage.class);
-	                Splash.this.startActivity(mainIntent);
-	                Splash.this.finish();
-	                prefs = getSharedPreferences("nbRepet",Context.MODE_PRIVATE);
-	                editor = prefs.edit();
-	                editor.putInt("nbRepet", 1);
-	                editor.commit();
+	                startActivity(mainIntent);
+	                finish();
+	                
             	}
             	
             	else
             	{
             		Intent mainIntent = new Intent(Splash.this, Mainscreen.class);
-	                Splash.this.startActivity(mainIntent);
-	                Splash.this.finish();
+	                startActivity(mainIntent);
+	                finish();
             	}
             }
         }, SPLASH_DISPLAY_LENGHT);

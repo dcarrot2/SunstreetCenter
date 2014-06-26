@@ -1,6 +1,9 @@
 package com.csitandroiddevelopers.sunstreetcenters;
 
 import com.csitandroiddevelopers.sunstreetcenters.R;
+import com.imagezoom.ImageAttacher;
+import com.imagezoom.ImageAttacher.OnMatrixChangedListener;
+import com.imagezoom.ImageAttacher.OnPhotoTapListener;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,22 +11,79 @@ import android.app.AlertDialog.Builder;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 public class Cigarettes_brochure extends Activity {
 
 	String number;
+	ImageView tab1,tab2,tab3,tab4,tab5;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cigarettes_brochure);
+		
+		tab1 = (ImageView) findViewById(R.id.imageView1);   
+	    Bitmap t1 = BitmapFactory.decodeResource(getResources(), R.drawable.ctab1);
+	    tab1.setImageBitmap(t1);
+	    usingSimpleImage(tab1);
+		
+		tab2 = (ImageView) findViewById(R.id.imageView2);   
+	    Bitmap t2 = BitmapFactory.decodeResource(getResources(), R.drawable.ctab2);
+	    tab2.setImageBitmap(t2);
+	    usingSimpleImage(tab2);
+	    
+	    tab3 = (ImageView) findViewById(R.id.imageView3);   
+	    Bitmap t3 = BitmapFactory.decodeResource(getResources(), R.drawable.ctab3);
+	    tab3.setImageBitmap(t3);
+	    usingSimpleImage(tab3);
+	    
+	    tab4 = (ImageView) findViewById(R.id.imageView4);   
+	    Bitmap t4 = BitmapFactory.decodeResource(getResources(), R.drawable.ctab4);
+	    tab4.setImageBitmap(t4);
+	    usingSimpleImage(tab4);
+	    
+	    tab5 = (ImageView) findViewById(R.id.imageView5);   
+	    Bitmap t5 = BitmapFactory.decodeResource(getResources(), R.drawable.ctab5);
+	    tab5.setImageBitmap(t5);
+	    usingSimpleImage(tab5);
+
 
 	}
+	
+
+	public void usingSimpleImage(ImageView imageView) {
+        ImageAttacher mAttacher = new ImageAttacher(imageView);
+        ImageAttacher.MAX_ZOOM = 2.0f; // Double the current Size
+        ImageAttacher.MIN_ZOOM = 1.0f; // Half the current Size
+        MatrixChangeListener mMaListener = new MatrixChangeListener();
+        mAttacher.setOnMatrixChangeListener(mMaListener);
+        PhotoTapListener mPhotoTap = new PhotoTapListener();
+        mAttacher.setOnPhotoTapListener(mPhotoTap);
+    }
+
+    private class PhotoTapListener implements OnPhotoTapListener {
+        @Override
+        public void onPhotoTap(View view, float x, float y) {
+        }
+    }
+
+    private class MatrixChangeListener implements OnMatrixChangedListener {
+        @Override
+        public void onMatrixChanged(RectF rect) {
+
+        }
+    }
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

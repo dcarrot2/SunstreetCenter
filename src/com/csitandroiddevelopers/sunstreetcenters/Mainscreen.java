@@ -1,6 +1,25 @@
 package com.csitandroiddevelopers.sunstreetcenters;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONObject;
+
 import com.csitandroiddevelopers.sunstreetcenters.Mainscreen;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.AlertDialog;
@@ -9,6 +28,8 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,8 +40,12 @@ import android.widget.ListView;
 
 public class Mainscreen extends Activity {
 
-
+	
 	//Test commit to check network path
+	static InputStream is = null;
+    static JSONObject jObj = null;
+    static String jsonin = "";
+	private static final String TAG = "SendingJSON";
 	String number;
 	ListView list;
 	String[] listItems = {
@@ -87,6 +112,23 @@ public class Mainscreen extends Activity {
 					}
 	    
 	             }); 
+	            
+	            
+	         SharedPreferences prefs;
+	   		 prefs = getSharedPreferences("nbRepet", MODE_PRIVATE);      
+	   		 int value = prefs.getInt("nbRepet", 0);
+	   		 
+	   		switch(value)
+	   		{
+	   		case 1:
+	   			sendJson("9-13");
+	   			break;
+	   		case 2:
+	   			sendJson("14-18");
+	   			break;
+	   		case 3:
+	   			sendJson("19+");
+	   		}
 	         }
 
 	
@@ -95,6 +137,78 @@ public class Mainscreen extends Activity {
 
 	public void onBackPressed() {
 		this.finish();
+	}
+	
+	public String getJson(HttpEntity httpEntity) {				
+
+		try {
+
+			is = httpEntity.getContent();          
+			Log.d(TAG, "Got Content from Entity");
+           //lists of exceptions
+		} catch (UnsupportedEncodingException e) {
+			Log.d(TAG, "Caught Exception");
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			Log.d(TAG, "Caught Exception");
+			e.printStackTrace();
+		} catch (IOException e) {
+			Log.d(TAG, "Caught Exception");
+			e.printStackTrace();
+		}
+         
+		try {
+			//inputsteamreader decondes into 8 single-byte graphic characters
+			//and the buffreader reads the text from the input stream
+			BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+			is.close();
+			jsonin = sb.toString();
+			Log.d(TAG, "String created");
+		} catch (Exception e) {
+			Log.d(TAG, "Caught Exception");
+			Log.e("Buffer Error", "Error converting result " + e.toString());
+		}
+		Log.d(TAG, "Json String returned");
+		return jsonin;
+    }
+	
+	public void sendJson(final String age) {
+		Thread t = new Thread() {
+
+			public void run() {
+				HttpClient client = new DefaultHttpClient();
+				HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
+				//HttpResponse response;
+	            JSONObject json = new JSONObject();
+
+	            try {
+	            	HttpPost post = new HttpPost("http://sunstreetnews.pythonanywhere.com/topnews/requestFromAndroid/");
+	            	json.put("Age", age);
+	            	StringEntity se = new StringEntity( json.toString());  
+	            	se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+	            	post.setEntity(se);
+	            	HttpResponse response = 
+	            			client.execute(post);
+	            	HttpEntity httpEntity = response.getEntity();
+	    			jsonin = getJson(httpEntity);     
+	            	Log.d(TAG, "JSON file posted");
+         
+
+	            } catch(Exception e) {
+	            	e.printStackTrace();
+	            	//logs to track if connection was established
+	            	Log.d(TAG, "Caught Exception");
+	            	Log.d(TAG, "Cannot Establish Connection");
+	            }
+
+			}
+		};
+		t.start();      
 	}
 
 	@Override
@@ -268,12 +382,5 @@ public class Mainscreen extends Activity {
 		builder.create().show();
 	}
 
-	
-	
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-	}
 
 }

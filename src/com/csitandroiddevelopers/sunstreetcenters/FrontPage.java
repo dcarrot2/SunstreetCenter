@@ -55,6 +55,7 @@ List<String> checks = new ArrayList<String> (Arrays.asList( "93426",  "93450",  
 		"93943",  "93944",  "93950",  "93953",  "93954",  "93955", "93960",  "93962",  "95004",  "95012",  "95039"));
 
 public static String age = "0";
+public static int sharedAge = 0;
 public static String choice = "n";
 //Test
 SharedPreferences prefs;
@@ -95,13 +96,13 @@ SharedPreferences.Editor editor;
                         
                         switch(which){
                 		case 0:
-                			com.csitandroiddevelopers.sunstreetcenters.FrontPage.age = "9-13";
+                			age = "9-13";
                 			break;
                 		case 1:
-                			com.csitandroiddevelopers.sunstreetcenters.FrontPage.age = "14-18";
+                			age = "14-18";
                 			break;
                 		case 2:
-                			com.csitandroiddevelopers.sunstreetcenters.FrontPage.age = "19+";
+                			age = "19+";
                 			break;
                 		
                 		}
@@ -179,9 +180,17 @@ SharedPreferences.Editor editor;
 							public void onClick(DialogInterface dialog, int which) {
 								
 								sendJson(zipCode, age, choice);
+								
+		                		if(age == "9-13")
+		                			sharedAge = 1;
+		                		else if(age == "14-18")
+		                			sharedAge = 2;
+		                		else if(age == "19+")
+			                		sharedAge = 3;
+		                		
 								prefs = getSharedPreferences("nbRepet",Context.MODE_PRIVATE);
 				                editor = prefs.edit();
-				                editor.putInt("nbRepet", 1);
+				                editor.putInt("nbRepet", sharedAge);
 				                editor.commit();
 								Intent intent = new Intent(FrontPage.this, Mainscreen.class);
 								startActivityForResult(intent,0);

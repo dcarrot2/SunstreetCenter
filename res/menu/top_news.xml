@@ -159,6 +159,12 @@
 	    </menu>
 	    
 	</item>
+	
+    <item
+        android:id = "@+id/refresh"
+        android:title="Refresh"
+        android:icon = "@drawable/ic_action_refresh"
+        android:showAsAction="always"/>
     
      
  	    

@@ -20,7 +20,7 @@
         android:allowBackup="true"
         android:icon="@drawable/sun_street_logo_button"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
+        android:theme="@style/MyTheme"
          >
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Splash"
@@ -45,75 +45,88 @@
         
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Mainscreen"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
             
         </activity>
 
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.TopNewsActivity"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
 
 
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.InfoForParents"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
 
 
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.ExtraFeatures"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Prescriptiondrugs_brochures"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Cigarettes_brochure"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Marijuana_brochure"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+           android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Alcohol_brochure"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
+        
+        <activity
+            android:name="com.csitandroiddevelopers.sunstreetcenters.AllBrochures"
+            android:label="Sun Street"
+            android:icon="@drawable/whiteicon"
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.Dialog">
+            
+        </activity>
+        
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Tutorial"
-            android:label="@string/title_activity_tutorial" 
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
         </activity>
         
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.PictureTakerActivity"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait"
             android:label="Sliding Puzzle">
           
@@ -122,14 +135,16 @@
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.GameMainActivity"
             android:label="Sliding Puzzle"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
         </activity>
 
 		<activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Locations"
-            android:label=""
-            android:theme="@android:style/Theme.Holo"
-            android:icon="@drawable/sun_street_logo_button"
+            android:label="Sun Street"
+            android:theme="@style/MyTheme"
+            android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
             
        </activity>

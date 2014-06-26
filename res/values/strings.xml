@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Sunstreet\nCenters</string>
+    <string name="app_name">Sun Street\nCenters</string>
     <string name="action_settings">Settings</string>
     <string name="url">www.sunstreetcenters.org</string>
     <string name="info">Info For Parents</string>
@@ -59,7 +59,7 @@
 
     <string name="title_activity_splash">Splash</string>
     <string name="school">"Submit School "</string>
-    <string name="city">Area Code:</string>
+    <string name="city">Zip Code:</string>
     <string name="action_about">About</string>
     <string name="action_group">Group</string>
     <string name="action_call">Call</string>

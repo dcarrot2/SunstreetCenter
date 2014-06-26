@@ -1,5 +1,8 @@
 package com.csitandroiddevelopers.sunstreetcenters;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -12,80 +15,108 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.csitandroiddevelopers.sunstreetcenters.R;
 
 public class TopNewsActivity extends Activity {
-	private static final String[] links = 
-		{"http://www.nytimes.com/2014/02/11/health/prescription-painkillers-seen-as-a-gateway-to-heroin.html?ref=prescriptiondrugabuse&_r=0",
-		"http://www.nbcsandiego.com/news/local/Unwanted-Guests-Prescription-Drug-Thieves-Coming-to-Open-Houses-249638161.html#ixzz2vnMYIuIX",
-		"http://www.nbcbayarea.com/news/california/CVS-Allegations-of-Missing-Hydrocodone-Prescription-Drugs-at-California-Pharmacies-249579241.html",
-		"http://www.kionrightnow.com/news/local-news/santa-cruz-dad-explains-dangerous-affects-of-prescription-drug-abuse/24894156",
-		"http://finance.yahoo.com/news/millennium-labs-helps-launch-coalition-234300591.html"};
-		
+	
+	static int namep; //position of name clicked
+    ListView listView;
+    static List<String> webTitle = new ArrayList<String>();
+    static List<String> website = new ArrayList<String>();
 	String number;
+	int counter = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_top_news);
-		Button linkOneButton = (Button) findViewById(R.id.linkOneButton);
-		Button linkTwoButton = (Button) findViewById(R.id.linkTwoButton);
-		Button linkThreeButton = (Button) findViewById(R.id.linkThreeButton);
-		Button linkFourButton = (Button) findViewById(R.id.linkFourButton);
-		Button linkFiveButton = (Button) findViewById(R.id.linkFiveButton);
+	     setContentView(R.layout.activity_top_news);
+          
+	     listView = (ListView) findViewById(R.id.list);
 
-		linkOneButton.setOnClickListener(new OnClickListener() {
+         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+           android.R.layout.simple_list_item_1, webTitle);
+ 
+ 
+         // Assign adapter to ListView
+         listView.setAdapter(adapter); 
+         
+         // ListView Item Click Listener
+         listView.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				openLink(links[0]);
-			}
-		});
+               @Override
+               public void onItemClick(AdapterView<?> parent, View view,
+                  int position, long id) {
+//            	   	String url = website.get(position);
+//        			Uri newsPage = Uri.parse(url);
+//        			Intent visitTwitter = new Intent(Intent.ACTION_VIEW, newsPage);
+//        			String textChooser = "Load " + url + " with:";
+//        			Intent chooseTweet = Intent.createChooser(visitTwitter, textChooser);
+//        			startActivity(chooseTweet);
+//            	
+            	   String webpage = website.get(position);
+            	   Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(webpage));
+            	   startActivity(browserIntent);	
+                 
+               }
+ 
+          }); 
 
-		linkTwoButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				openLink(links[1]);
-			}
-		});
-		linkThreeButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				openLink(links[2]);
-			}
-		});
-		linkFourButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				openLink(links[3]);
-			}
-		});
 		
-		linkFiveButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				openLink(links[4]);
+		for( int i=0; i< Mainscreen.jsonin.length(); i++ ) {
+		    if( Mainscreen.jsonin.charAt(i) == ',' ) {
+		        counter++;
+		    } 
+		}
+		
+		if(Mainscreen.jsonin != "")
+		{
+			String[] array = Mainscreen.jsonin.split(",");
+			String tempString;
+			String[] tempArray;
+			
+			for(int x = 0; x <= counter; x++)
+			{
+				if(x == counter)
+				{
+					tempString = array[x].substring(2,array[x].length()-3);
+					tempArray = tempString.split("\": \"");
+					if(!webTitle.contains(tempArray[0]))
+					{
+						webTitle.add(tempArray[0]);
+						website.add(tempArray[1]);
+						
+					}
+					
+				}
+					
+				else
+				{
+					tempString = array[x].substring(2,array[x].length()-1);
+					tempArray = tempString.split("\": \"");
+					if(!webTitle.contains(tempArray[0]))
+					{
+						webTitle.add(tempArray[0]);
+						website.add(tempArray[1]);
+						
+					}
+					
+				}
+					
 			}
-		});
+		}
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    // Inflate the menu items for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.mainscreen, menu);
+	    inflater.inflate(R.menu.top_news, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -218,7 +249,16 @@ public class TopNewsActivity extends Activity {
 	   
 	    case R.id.website:
 			SunsetWebsite websiteLink = new SunsetWebsite();
-			startActivity(websiteLink.linkToSite());	
+			startActivity(websiteLink.linkToSite());
+			return true;
+			
+	    case R.id.refresh:
+	    	finish();
+        	startActivity(getIntent());
+        	return true;
+		
+		
+		
 	    	
         default:
             return super.onOptionsItemSelected(item);
@@ -252,11 +292,5 @@ public class TopNewsActivity extends Activity {
 		builder.create().show();
 	}
 	
-	private void openLink(String url){
-		Uri newsPage = Uri.parse(url);
-		Intent visitTwitter = new Intent(Intent.ACTION_VIEW, newsPage);
-		String textChooser = "Load " + url + " with:";
-		Intent chooseTweet = Intent.createChooser(visitTwitter, textChooser);
-		startActivity(chooseTweet);
-	}
+	
 }
