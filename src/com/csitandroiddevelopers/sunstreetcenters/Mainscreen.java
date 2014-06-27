@@ -85,7 +85,6 @@ public class Mainscreen extends Activity {
 						
 							if(position == 0){
 								
-								Toast.makeText(getApplicationContext(), "block"+jsonin+"block", Toast.LENGTH_SHORT).show();
 								Intent features = new Intent(Mainscreen.this,AllBrochures.class);
 								startActivity(features);
 								
