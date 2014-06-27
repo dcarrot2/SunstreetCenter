@@ -73,7 +73,7 @@ public class TopNewsActivity extends Activity {
 		    } 
 		}
 		
-		if(Mainscreen.jsonin != "")
+		if(Mainscreen.jsonin.charAt(1) == '"')
 		{
 			String[] array = Mainscreen.jsonin.split(",");
 			String tempString;

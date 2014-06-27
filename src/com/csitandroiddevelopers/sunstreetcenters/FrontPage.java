@@ -225,7 +225,7 @@ SharedPreferences.Editor editor;
 	            JSONObject json = new JSONObject();
 
 	            try {
-	            	HttpPost post = new HttpPost("http://192.168.1.248:8000/demographics/receivedatafromandroid/");
+	            	HttpPost post = new HttpPost("http://sunstreetnews.pythonanywhere.com/demographics/receivedatafromandroid/");
 	            	json.put("Zip", zip);
 	            	json.put("Age", age);
 	            	json.put("Gender", gender);

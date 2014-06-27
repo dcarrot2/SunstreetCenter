@@ -35,6 +35,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -83,6 +84,8 @@ public class Mainscreen extends Activity {
 							int position, long id) {
 						
 							if(position == 0){
+								
+								Toast.makeText(getApplicationContext(), "block"+jsonin+"block", Toast.LENGTH_SHORT).show();
 								Intent features = new Intent(Mainscreen.this,AllBrochures.class);
 								startActivity(features);
 								
