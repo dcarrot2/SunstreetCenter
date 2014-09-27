@@ -54,7 +54,7 @@
 
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.TopNewsActivity"
-            android:label="Sun Street"
+            android:label="News"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
@@ -63,7 +63,7 @@
 
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.InfoForParents"
-            android:label="Sun Street"
+            android:label="Parents' Info"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
@@ -72,35 +72,35 @@
 
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.ExtraFeatures"
-            android:label="Sun Street"
+            android:label="BAC calculator"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Prescriptiondrugs_brochures"
-            android:label="Sun Street"
+            android:label="Prescription"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Cigarettes_brochure"
-            android:label="Sun Street"
+            android:label="Cigarettes"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Marijuana_brochure"
-           android:label="Sun Street"
+           android:label="Marijuana"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Alcohol_brochure"
-            android:label="Sun Street"
+            android:label="Alcohol"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" >
@@ -108,7 +108,7 @@
         
         <activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.AllBrochures"
-            android:label="Sun Street"
+            android:label="Drug Brochures"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait" 
             android:theme="@android:style/Theme.Dialog">
@@ -142,7 +142,7 @@
 
 		<activity
             android:name="com.csitandroiddevelopers.sunstreetcenters.Locations"
-            android:label="Sun Street"
+            android:label="Locations"
             android:theme="@style/MyTheme"
             android:icon="@drawable/whiteicon"
             android:screenOrientation="portrait">

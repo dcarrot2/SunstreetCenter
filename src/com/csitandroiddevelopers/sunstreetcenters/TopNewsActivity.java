@@ -73,7 +73,7 @@ public class TopNewsActivity extends Activity {
 		    } 
 		}
 		
-		if(Mainscreen.jsonin.charAt(1) == '"')
+		if(!Mainscreen.jsonin.equals(""))
 		{
 			String[] array = Mainscreen.jsonin.split(",");
 			String tempString;
@@ -144,7 +144,7 @@ public class TopNewsActivity extends Activity {
 	    	return true;
 	    	
 	    case R.id.salinasPrevention:
-	    	
+	  
 	    	number = "8317535150";
 	    	callAlertDialog(number);
 	    	return true;
@@ -252,10 +252,10 @@ public class TopNewsActivity extends Activity {
 			startActivity(websiteLink.linkToSite());
 			return true;
 			
-	    case R.id.refresh:
+	    /*case R.id.refresh:
 	    	finish();
         	startActivity(getIntent());
-        	return true;
+        	return true;*/
 		
 		
 		

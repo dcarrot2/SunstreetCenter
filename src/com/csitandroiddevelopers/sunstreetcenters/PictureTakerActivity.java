@@ -5,9 +5,14 @@ import java.io.IOException;
 
 import com.csitandroiddevelopers.sunstreetcenters.R;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -94,6 +99,30 @@ public class PictureTakerActivity extends Activity {
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					}catch (NullPointerException e){
+						e.printStackTrace();
+						
+						AlertDialog.Builder builder = new Builder(this);
+						builder.setMessage("Would you like to select a picture from gallery: ");
+						builder.setTitle("Taking photos is not supported in this device: ");
+
+						builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								dialog.cancel();
+								Intent redo = new Intent(PictureTakerActivity.this,PictureTakerActivity.class);
+								startActivity(redo);
+							}
+						});	
+
+						builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								Intent inB = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+								startActivityForResult(inB, RESULT_LOAD_IMAGE);
+							}
+						});	
+						
+						builder.create().show();
+						
 					}
 				}
 			}	

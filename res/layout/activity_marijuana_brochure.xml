@@ -16,7 +16,7 @@
             android:paddingLeft="5dip"
             android:paddingRight="5dip"
             android:scaleType="fitXY"
-            android:src="@drawable/marijuna" />
+            android:src="@drawable/ic_launcher" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -26,7 +26,7 @@
             android:paddingLeft="5dip"
             android:paddingRight="5dip"
             android:scaleType="fitXY"
-            android:src="@drawable/marijuna" />
+            android:src="@drawable/ic_launcher" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -36,7 +36,7 @@
             android:paddingLeft="5dip"
             android:paddingRight="5dip"
             android:scaleType="fitXY"
-            android:src="@drawable/marijuna" />
+            android:src="@drawable/ic_launcher" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -46,7 +46,7 @@
             android:paddingLeft="5dip"
             android:paddingRight="5dip"
             android:scaleType="fitXY"
-            android:src="@drawable/marijuna" />
+            android:src="@drawable/ic_launcher" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -56,7 +56,7 @@
             android:paddingLeft="5dip"
             android:paddingRight="5dip"
             android:scaleType="fitXY"
-            android:src="@drawable/marijuna" />
+            android:src="@drawable/ic_launcher" />
     </LinearLayout>
 
 </HorizontalScrollView>

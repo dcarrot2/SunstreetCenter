@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,6 +22,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Toast;
 
 import com.csitandroiddevelopers.sunstreetcenters.R;
 
@@ -28,6 +30,7 @@ public class ExtraFeatures extends Activity {
 	private static final String WEIGHT = "WEIGHT";
 	
 	String number;
+	
 
 	private double weight;
 	private double bac;
@@ -427,8 +430,28 @@ public class ExtraFeatures extends Activity {
 		}
 
 		bAC = (.806 * numDrinks * 1.2) / (bodyWaterConstant * weightInKG)
-				- (metabolismConstant * numTime);
-		alcoholContent.setText(String.format("%.3f", bAC));
+				- (metabolismConstant * numTime); 
+		if(bAC == 0)
+		{
+			Toast toast = Toast.makeText(getApplicationContext(), "You are below the legal limit!", Toast.LENGTH_SHORT);
+			toast.show();
+		}
+		else if(weightInKG == 0.0)
+		{
+			Toast toast = Toast.makeText(getApplicationContext(), "Your weight is set to 0.", Toast.LENGTH_SHORT);
+			toast.show();
+		}
+		else if(bAC < 0.0800)
+		{
+			alcoholContent.setText(String.format("%.3f", bAC));
+			Toast toast = Toast.makeText(getApplicationContext(), "You are below the legal limit!", Toast.LENGTH_SHORT);
+			toast.show();
+		}
+		else if(bAC >= 0.0800)
+		{	
+			Toast toast = Toast.makeText(getApplicationContext(), "You are above the legal limit!", Toast.LENGTH_SHORT);
+			toast.show();
+		}
 	}
 
 

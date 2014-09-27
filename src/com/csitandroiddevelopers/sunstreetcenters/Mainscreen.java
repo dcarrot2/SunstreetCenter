@@ -70,6 +70,9 @@ public class Mainscreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
+		Runtime rt = Runtime.getRuntime();
+		long maxMemory = rt.maxMemory();
+		Log.d("onCreate", "maxMemory: " + Long.toString(maxMemory));
 				CustomList adapter = new
 				CustomList(Mainscreen.this, listItems, imageId);
 				list=(ListView)findViewById(R.id.list);
